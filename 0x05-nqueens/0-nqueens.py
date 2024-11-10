@@ -6,38 +6,29 @@ def ChessBoard(n: int):
     """solving N queens problem with Backtracking algorithm.
     Args:
         n (int): non-attacking queens to place on board.
-                (n)^2 determines chess board size.
 
     Return:
         List[List[int]]: list of columns & rows of where queens are placed.
     """
-    result = list()
+    result = []
 
     def checkBoard(row, col, col_in_row):
         """Checks if queen can be placed without attacking the other queens"""
         for r in range(row):
-            if row - r == abs(col - col_in_row[r]):
+            if col_in_row[r] == col or row - r == abs(col - col_in_row[r]):
                 return False
         return True
 
-    def saveBoard(row, cols, col_in_row):
-        """Saves the current state of the board"""
-        if row == n:
-            con_result = []
-            for r in range(n):
-                temp_result = []
-                for c in range(n):
-                    if c == col_in_row[r]:
-                        temp_result.append(r)
-                        temp_result.append(col_in_row[r])
-                        con_result.append(temp_result)
-                if len(con_result) == n:
-                    result.append(con_result)
-                    temp_result, con_result = [], []
+    def saveBoard(col_in_row):
+        """Saves the current state of the board as a solution"""
+        solution = [[i, col_in_row[i]] for i in range(n)]
+        result.append(solution)
 
     def placeQueen(row, cols, col_in_row):
-        """Places non-attacking queens on an chessboard"""
-        saveBoard(row, cols, col_in_row)
+        """Places non-attacking queens on an n x n chessboard"""
+        if row ==n:
+            saveBoard(col_in_row)
+        return
         for col in range(n):
             if cols[col] == 0 and checkBoard(row, col, col_in_row):
                 cols[col] = 1
