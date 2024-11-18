@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+module: ..
+the strongest female chess player of all time
+return: ..
+"""
 from sys import argv, exit
 
 
