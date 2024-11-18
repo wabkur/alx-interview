@@ -4,7 +4,7 @@ module: ..
 the strongest female chess player of all time
 return: ..
 """
-from sys import argv, exit
+import sys
 
 
 def solveNQueens(n):
@@ -44,18 +44,18 @@ def solveNQueens(n):
     return make_all_boards(res)
 
 if __name__ == "__main__":
-    if len(argv) < 2:
+    if len(sys.argv) < 2:
         print('Usage: nqueens N')
-        exit(1)
+        sys.exit(1)
     try:
-        n = int(argv[1])
+        n = int(sys.argv[1])
     except ValueError:
         print('N must be a number')
-        exit(1)
+        sys.exit(1)
 
     if n < 4:
         print('N must be at least 4')
-        exit(1)
+        sys.exit(1)
     else:
         result = solveNQueens(n)
         for row in result:
