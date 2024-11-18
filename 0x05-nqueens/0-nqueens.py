@@ -21,9 +21,7 @@ def solveNQueens(n):
     def valid(n):
         """Method that checks the valid of position in board"""
         for i in range(n):
-            if abs(queens[i] - queens[n]) == n - i:
-                return False
-            if queens[i] == queens[n]:
+            if abs(queens[i] - queens[n]) == n - i or queens[i] == queens[n]:
                 return False
         return True
 
