@@ -24,3 +24,7 @@ def rotate_2d_matrix(matrix):
             matrix[y][x] = matrix[j][y]
             # change right for top
             matrix[j][y] = tmp
+<<<<<<< HEAD
+=======
+
+>>>>>>> 98d0e20d2d593f3d2715981a0df9b7132ff0331f
