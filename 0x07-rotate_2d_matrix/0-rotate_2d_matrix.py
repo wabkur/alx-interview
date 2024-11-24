@@ -5,9 +5,9 @@ Rotate 2D Matrix
 
 
 def rotate_2d_matrix(matrix):
-    """rotate two dimension matrix 90 degrees clockwise
+    """Rotate it 90 degrees clockwise
     Args:
-        matrix (list[[list]]): a matrix
+        matrix (list[list]): a matrix
     """
     n = len(matrix)
     for i in range(int(n / 2)):
@@ -16,11 +16,11 @@ def rotate_2d_matrix(matrix):
             x = (n - 1 - j)
             # current number
             tmp = matrix[i][j]
-            # change top for left
+            # Top for left
             matrix[i][j] = matrix[x][i]
-            # change left for bottom
+            # Left for bottom
             matrix[x][i] = matrix[y][x]
-            # change bottom for right
+            # Bottom for right
             matrix[y][x] = matrix[j][y]
-            # change right for top
+            # Right for top
             matrix[j][y] = tmp
