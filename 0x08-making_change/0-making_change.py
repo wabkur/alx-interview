@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-""" A function that is given a pile of coins of a different values, 
-and fewest no. of coins neededto meet a given amount total
+""" A function that is given a pile of coins of different values,
+and fewest number of coins neededto meet a given amount
 """
 
 
