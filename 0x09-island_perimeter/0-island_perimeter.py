@@ -7,9 +7,9 @@ Function that contain the island_perimeter
 def island_perimeter(grid):
     """
     Function that returns the perimeter of the island described in grid
-    
+
     Returns:
-        Perimeter of the island
+        int: Perimeter of the island
     """
     per = 0
     for i in range(len(grid)):
